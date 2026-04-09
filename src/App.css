@@ -1,3 +1,10 @@
+/* REVIEW: This entire file is leftover boilerplate from the Vite + React template.
+   None of the selectors below (.counter, .hero, #center, #next-steps, #docs,
+   #spacer, .ticks) are referenced anywhere in the movie app's JSX.
+   This file should be cleared and replaced with styles for the actual movie app
+   (e.g., form layout, movie list styling, button styles) instead of relying
+   on inline styles in App.jsx. */
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -167,7 +174,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -4.5px;
     border: 5px solid transparent;

@@ -1,3 +1,10 @@
+/* REVIEW: Most of the CSS custom properties below (--code-bg, --accent, --accent-bg,
+   --accent-border, --social-bg, --shadow, --mono) are only used in App.css which
+   itself is entirely unused Vite boilerplate. Clean up unused variables.
+   The --border and layout variables are used by the #root rule below but the
+   fixed-width #root layout (1126px) conflicts with App.jsx's inline styles
+   that set their own textAlign and margins. Pick one approach. */
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -11,8 +18,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -45,6 +52,8 @@
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
+  /* REVIEW: #social element does not exist in the movie app. This rule is dead code
+     from the Vite template. */
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
@@ -54,6 +63,10 @@ body {
   margin: 0;
 }
 
+/* REVIEW: This #root block sets a fixed 1126px width with side borders — layout
+   inherited from the Vite template. App.jsx then overrides textAlign and adds
+   its own marginTop via inline styles, creating conflicting layout approaches.
+   Decide on one styling strategy (CSS file or inline) and be consistent. */
 #root {
   width: 1126px;
   max-width: 100%;
@@ -95,6 +108,8 @@ p {
   margin: 0;
 }
 
+/* REVIEW: The .counter class is not used anywhere in the movie app.
+   The <code> element is also never used. Both are Vite boilerplate. */
 code,
 .counter {
   font-family: var(--mono);
